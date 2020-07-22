@@ -1,0 +1,604 @@
+@font-face {
+    font-family: anurati;
+    src: url(../assets/Anurati-Regular.otf) format('opentype');
+    }
+
+@mixin logo-animation {
+
+           #strikethru-anim{
+            animation-name: strikethru-expand;
+            animation-duration: 2s;    
+        }
+        #bong{
+            animation-name: bong;
+            animation-duration: 4s;
+        }
+        #jack{
+            animation-name: jack;
+            animation-duration: 4s;
+        }
+        #logo-desc{
+            animation-name: desc;
+            animation-duration: 8s;
+        }
+        @keyframes strikethru-expand {
+            0%{
+                width: 0px;
+            }
+            100%{
+                width: 300px;
+            }
+        }
+
+        @keyframes bong {
+            0%{
+                opacity: 0;
+            }
+            40%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+                color: white;
+                font-size: 80px;
+                font-family: anurati;
+            }
+        }
+        @keyframes jack {
+            0%{
+                opacity: 0;
+            }
+            40%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+                color: white;
+                font-size: 80px;
+                font-family: anurati;
+            }
+        }
+        @keyframes desc {
+            0%{
+                opacity: 0;
+            }
+            30%{
+                opacity: 0;              
+            }          
+            100%{
+                opacity: 1;
+            }
+        }
+}
+
+    // Mobile Support <SCREEN WIDTH 640PX BELOW>-------------------------------------------------------------
+    
+@media only screen and(max-width: 640px){
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    // Section base styling
+
+    .onepage{
+        position: relative;
+        height: 100vh;    
+        text-align: center;
+    }
+
+    header{
+        background: url("https://cdn.wallpapersafari.com/50/56/Q7dEjn.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+
+    // Navigation bar 
+
+
+    .navbar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+
+    }
+    
+
+    ul{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 90vh;
+    }
+
+    button{
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: white;
+        border: white solid 1px;
+        transition: 0.5s;
+        outline: none;
+        margin: auto;
+    }
+
+    li{
+        list-style: none;
+        text-align: center;
+    }
+
+    .link-text{
+        font-size: 10px;
+        opacity: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 5px 0px;
+        transition: 0.5s;
+        color: white
+    }
+
+    // on current section
+
+    button.activated{
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background: white;
+        border: white solid 1px;
+        transition: 0.5s;
+    }
+        
+    button.activated + .link-text{
+        color: white;
+        transition: 0.5s;
+        opacity: 1;
+    }
+
+    .prev-btn,.next-btn{
+        visibility: hidden ;
+    }
+}
+
+    // Section one styling
+    .onepage:nth-child(1){
+
+        .header-text{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        h1{
+            color: white;
+            font-size: 60px;
+            font-family: anurati;
+        }
+
+        .logo-desc{
+            height: 20px;
+            color: white;
+            font-size: 20px;
+            font-family: roboto;
+            width: 150px;
+            overflow: hidden;
+        }
+
+        .strikethru{
+            width: 240px;
+            height: 1px;
+            background: white;
+        }
+    }
+
+
+    // Section two styling
+  
+    .onepage:nth-child(2){
+        background: #166ea8;
+
+
+        .card-container{
+            height: 100vh;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            background: white;
+            width: 70%;
+            height: 65%;
+            -webkit-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+            border-radius: 10px;
+        }
+
+        .card-picture{
+            height: 45%;
+            width: 90%;
+            margin: auto;
+            margin-top: 5%;
+            background: url("../assets/metalcube1008.png") no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+            border: 1px solid #201F1F;
+        }
+
+        .card-desc{
+            padding-top: 10px;
+            color: black;
+            font-family: roboto;
+            font-size: 20px;
+        }
+
+        .card-desc-desc{
+            width: 90%;
+            margin: auto;
+            padding: 10px 0px;
+            text-align: left;
+            font-family: roboto;
+            font-weight: bolder;
+        }
+
+        .card-tech{
+            margin: auto;
+            padding: 10px 0px;
+            display: inline;
+
+            .tech-btn{
+                background: #09929e;
+                color: white;
+                border-radius: 2px;
+                border: none;
+                padding: 5px 5px;
+                outline: none;
+            }
+        }
+
+        .live{
+            outline: none;
+            width: 90%;
+            height: 10%;
+            position: relative;
+            top: 40px;
+            text-align: center;
+            color: white;
+            background: #fadd02;
+            border: none;
+            font-size: 20px;
+            border-radius: 10px;;
+        }
+    }
+
+    .onepage:nth-child(3){
+        background: #201F1F;
+        display: flex;
+        flex-direction: column  ;
+        justify-content: center;
+        align-items: center;
+
+        .contact-title{
+            font-family: Segoe UI;
+            font-size: 40px;
+            color: white;
+        }
+
+        .contact-desc{
+            color: white;
+            font-family: roboto;
+            font-size: 15px;
+            padding: 5px 0px;
+        }
+
+        .contact-full-box{
+            display: flex;
+            flex-direction: row;
+        }
+
+         .contact-box{
+            padding: 0px 20px;    
+        }
+    }
+
+}
+
+
+    // Desktop Support <SCREEN WIDTH 640PX ABOVE>------------------------------------------------------------
+
+@media only screen and(min-width:640px){
+    
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    // side navigation bar
+
+    .navbar{
+        position: fixed;
+        right: 0px;
+        z-index: 100;
+        width: 100px;
+
+        ul{
+            height: 100vh;
+            right: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        button{
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border: white solid 1px;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        .link-text{
+            opacity: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px 0px;
+            transition: 0.5s;
+            color: white;
+        }
+
+        // on current section
+
+        button.activated{
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: white solid 1px;
+            transition: 0.5s;
+        }
+
+        button.activated + .link-text{
+            color: white;
+            transition: 0.5s;
+            opacity: 1;
+        }
+
+        // on hover
+
+        button:hover{
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: white solid 1px;
+            transition: 0.5s;
+        }
+
+        button:hover + .link-text{
+            color: white;
+            transition: 0.5s;
+            opacity: 1;
+        }
+    }
+    // Header Background Image
+
+    header{
+        background: url("https://cdn.wallpapersafari.com/50/56/Q7dEjn.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+
+    // Section styling
+
+    .next-btn{
+        visibility: hidden;
+    }
+    .prev-btn{
+        visibility: hidden;
+    }
+  
+    .onepage{
+        position: relative;
+        height: 100vh;    
+        text-align: center;
+    }
+
+    //  Section One Styling
+
+    .onepage:nth-child(1){
+
+        // Logo text
+
+        .header-text{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        h1{
+            color: white;
+            font-size: 80px;
+            font-family: anurati;
+        }
+
+        .logo-desc{
+            height: 30px;
+            color: white;
+            font-size: 20px;
+            font-family: roboto;
+            width: 150px;
+            overflow: hidden;
+        }
+
+        .strikethru{
+            width: 300px;
+            height: 1px;
+            background: white;
+        }
+
+        @include logo-animation;
+
+    }
+
+        // Section two styling
+  
+        .onepage:nth-child(2){
+            background: #166ea8;
+
+            .card-container{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card{
+                position: relative;
+                width: 22%;
+                height: 70%;
+                background: white;
+                border-radius: 10px;
+                -webkit-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+                box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
+
+            }
+
+            .card-picture{
+                height: 45%;
+                width: 90%;
+                margin: auto;
+                margin-top: 5%;
+                background: url("../assets/metalcube1008.png") no-repeat center;
+                background-size: cover;
+                border-radius: 10px;
+                border: 1px solid #201F1F;
+            }
+
+            .card-desc{
+                padding-top: 10px;
+                color: black;
+                font-family: 'Poppins', sans-serif;
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+            .card-desc-desc{
+                width: 90%;
+                margin: auto;
+                padding: 10px 0px;
+                text-align: left;
+                font-family: roboto;
+                font-weight: bolder;
+            }
+
+            .card-tech{
+                margin: auto;
+                padding: 10px 0px;
+                display: inline;
+
+                .tech-btn{
+                    background: #09929e;
+                    color: white;
+                    border-radius: 2px;
+                    border: none;
+                    padding: 5px 10px;
+                    outline: none;
+                }
+            }
+
+            .live{
+                outline: none;
+                position: absolute;
+                width: 90%;
+                height: 10%;
+                bottom: auto;
+                left: 5%;
+                bottom: 5%;
+                text-align: center;
+                color: white;
+                background: #fadd02;
+                border: none;
+                font-size: 20px;
+                border-radius: 10px;;
+            }
+
+            .my-proj{
+                font-family: Segoe UI;
+                font-size: 40px;
+                color: white;
+            }
+
+        }
+
+    // Section three styling
+
+    .onepage:nth-child(3){
+        background: #201F1F;
+        display: flex;
+        flex-direction: column  ;
+        justify-content: center;
+        align-items: center;
+
+        .contact-title{
+            font-family: Segoe UI;
+            font-size: 40px;
+            color: white;
+        }
+
+        .contact-desc{
+            color: white;
+            font-family: roboto;
+            font-size: 15px;
+            padding: 5px 0px;
+        }
+
+        .contact-full-box{
+            display: flex;
+            flex-direction: row;
+        }
+
+         .contact-box{
+            padding: 0px 20px;    
+        }
+    }
+
+    
+}
+
