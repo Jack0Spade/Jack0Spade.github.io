@@ -91,6 +91,7 @@
         position: relative;
         height: 100vh;    
         text-align: center;
+        width: 100vw;
     }
 
     header{
@@ -113,7 +114,6 @@
         z-index: 100;
 
     }
-    
 
     ul{
 
@@ -223,6 +223,7 @@
         }
 
         .card{
+            position: absolute;
             background: white;
             width: 70%;
             height: 65%;
@@ -230,6 +231,13 @@
             -moz-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
             box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
             border-radius: 10px;
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .card.active{
+            opacity: 1;
+            z-index: 10;
         }
 
         .card-picture{
@@ -287,6 +295,33 @@
             font-size: 20px;
             border-radius: 10px;;
         }
+
+        .carousel-nav{
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            bottom: 5%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .carousel-button{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: none;
+            border: 1px solid white;
+            margin: 0px 10px;
+            outline: none;
+            transition: 0.5s;
+        }
+
+        .carousel-button.active{
+            background: white;
+            width: 20px;
+            height: 20px;
+        }
+
     }
 
     .onepage:nth-child(3){
@@ -310,8 +345,7 @@
         }
 
         .contact-full-box{
-            display: flex;
-            flex-direction: row;
+            width: 100vw;
         }
 
          .contact-box{
@@ -486,6 +520,12 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .carousel-nav{
+                display: none;
             }
 
             .card{
@@ -497,7 +537,6 @@
                 -webkit-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
                 -moz-box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
                 box-shadow: -7px 10px 10px 0px rgba(0,0,0,0.75);
-
             }
 
             .card-picture{
@@ -505,7 +544,6 @@
                 width: 90%;
                 margin: auto;
                 margin-top: 5%;
-                background: url("../assets/metalcube1008.png") no-repeat center;
                 background-size: cover;
                 border-radius: 10px;
                 border: 1px solid #201F1F;

@@ -1,4 +1,3 @@
-
 // One page scroll script
 
 const page = document.querySelectorAll('.onepage');
@@ -107,3 +106,38 @@ window.addEventListener('wheel', (e) =>{
 
 
 },{passive: false});
+
+
+// Mobile Project Carousel { Definitely there is a way more efficient way of doing this but i just want to get it done }
+
+const projBtn1 = document.querySelector("#proj-btn-1");
+const projBtn2 = document.querySelector("#proj-btn-2");
+const card1 = document.querySelector('#card-1');
+const card2 = document.querySelector('#card-2');
+
+function projCheck(index){
+card1.classList.remove('active');
+projBtn1.classList.remove('active')
+card2.classList.remove('active');
+projBtn2.classList.remove('active')
+
+    switch(index){
+        case 1:
+            card1.classList.toggle('active');
+            projBtn1.classList.toggle('active');
+            break
+
+        case 2:
+            card2.classList.toggle('active');
+            projBtn2.classList.toggle('active');
+            break
+    }
+}
+
+projBtn1.addEventListener('click', () =>{
+    projCheck(1);
+});
+
+projBtn2.addEventListener('click', () =>{
+    projCheck(2);
+});
