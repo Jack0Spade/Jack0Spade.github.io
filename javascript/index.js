@@ -112,14 +112,18 @@ window.addEventListener('wheel', (e) =>{
 
 const projBtn1 = document.querySelector("#proj-btn-1");
 const projBtn2 = document.querySelector("#proj-btn-2");
+const projBtn3 = document.querySelector("#proj-btn-3");
 const card1 = document.querySelector('#card-1');
 const card2 = document.querySelector('#card-2');
+const card3 = document.querySelector('#card-3');
 
 function projCheck(index){
 card1.classList.remove('active');
 projBtn1.classList.remove('active')
 card2.classList.remove('active');
 projBtn2.classList.remove('active')
+card3.classList.remove('active');
+projBtn3.classList.remove('active')
 
     switch(index){
         case 1:
@@ -131,6 +135,11 @@ projBtn2.classList.remove('active')
             card2.classList.toggle('active');
             projBtn2.classList.toggle('active');
             break
+
+        case 3:
+            card3.classList.toggle('active');
+            projBtn3.classList.toggle('active');
+            break
     }
 }
 
@@ -140,4 +149,8 @@ projBtn1.addEventListener('click', () =>{
 
 projBtn2.addEventListener('click', () =>{
     projCheck(2);
+});
+
+projBtn3.addEventListener('click', () =>{
+    projCheck(3);
 });
